@@ -1,4 +1,2 @@
 #!/bin/bash
-sudo chown betty root \n
-ls 
-
+su betty \n 
