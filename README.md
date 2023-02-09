@@ -1,1 +1,1 @@
-permission change own
+readme part
