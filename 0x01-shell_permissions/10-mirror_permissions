@@ -1,0 +1,6 @@
+#!/bin/bash
+touch hello olleh
+read X
+chmod $X  olleh
+chmod $X  hello
+ls -l
