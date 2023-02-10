@@ -1,6 +1,2 @@
 #!/bin/bash
-touch hello olleh
-read X
-chmod $X  olleh
-chmod $X  hello
-ls -l
+chmod $X 10-mirror_permissions/hello \n
