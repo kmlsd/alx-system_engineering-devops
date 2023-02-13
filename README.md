@@ -1,1 +1,1 @@
-hello sc
+hellow file script
