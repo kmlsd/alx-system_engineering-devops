@@ -10,4 +10,17 @@ total 40
 4 -rwx------ 1 root root   36 Feb 15 08:53 8-cwd_state
 0 -rw-r--r-- 1 root root    0 Feb 13 13:51 \*\\"Best School"\\\*$\?\*\*\*\*\*:)
 4 -rw-r--r-- 1 root root 1338 Feb 13 13:11 iacta
-0 -rw-r--r-- 1 root root    0 Feb 15 08:54 ls_cwd_content
+0 -rw-r--r-- 1 root root    0 Feb 15 09:00 ls_cwd_content
+total 44
+4 -rwx------ 1 root root   33 Feb 14 11:27 0-hello_world
+4 -rwx------ 1 root root   30 Feb 14 11:54 1-confused_smiley
+4 -rwx------ 1 root root   29 Feb 13 11:41 2-hellofile
+4 -rwx------ 1 root root   45 Feb 13 11:56 3-twofiles
+4 -rwx------ 1 root root   35 Feb 13 12:12 4-lastlines
+4 -rwx------ 1 root root   35 Feb 13 12:16 5-firstlines
+4 -rwx------ 1 root root   43 Feb 14 11:50 6-third_line
+4 -rwx------ 1 root root   61 Feb 15 06:40 7-file
+4 -rwx------ 1 root root   38 Feb 15 09:01 8-cwd_state
+0 -rw-r--r-- 1 root root    0 Feb 13 13:51 \*\\"Best School"\\\*$\?\*\*\*\*\*:)
+4 -rw-r--r-- 1 root root 1338 Feb 13 13:11 iacta
+4 -rw-r--r-- 1 root root  695 Feb 15 09:00 ls_cwd_content
