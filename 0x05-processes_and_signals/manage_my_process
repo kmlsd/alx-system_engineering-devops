@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Daemon process
 # This script is doing a lot of things.
 
 while true; do
