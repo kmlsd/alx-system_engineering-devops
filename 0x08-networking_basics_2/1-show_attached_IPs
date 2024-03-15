@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script is showing attached IPs.
 
-ipconfig | grep -Po '(?<=inet addr:)(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
+ifconfig | grep -Po '(?<=inet addr:)(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
