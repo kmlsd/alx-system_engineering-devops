@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-# This script uses ssh to connect to a server using a private key
-
-ssh  ubuntu@34.224.6.120
-ssh -i ~/.ssh/school  ubuntu@34.234.193.199
-
-#!/usr/bin/env bash
-# Creates a new 4096-byte RSA key pair named holberton.
-ssh-keygen -b 4096 -N betty -f school
-
-#!/usr/bin/env bash
 #command to install nginx on web
  sudo  apt-get update
  sudo  apt-get install nginx
  sudo  ufw 'nginx HTTP'
-   
- echo "Hello World" | sudo tee /var/www/html/index.html
+ sudo  nginx -t 
+ echo "Hello World!" | sudo tree /var/www/html/index.html
  sudo  service nginx reload
