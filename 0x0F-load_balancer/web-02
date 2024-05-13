@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script login vi ssh to a web server.
+eval $("ssh-agent")
+#ssh-add ~/.ssh/schoow2
+
+ssh ubuntu@52.201.220.61
