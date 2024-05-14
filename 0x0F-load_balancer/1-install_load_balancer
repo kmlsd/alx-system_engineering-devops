@@ -1,4 +1,6 @@
-nstalls HAProxy version 2.4 with the following configurations:
+#!/usr/bin/env bash
+# configures a new HAproxy as a load balancer
+#installs HAProxy version 2.4 with the following configurations:
 
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.4
