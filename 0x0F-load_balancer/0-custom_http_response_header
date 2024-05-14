@@ -1,5 +1,25 @@
+#!/usr/bin/env bash
+#command to install nginx on both web serv 
+# redirection both server
+#customizing a 404 error
+ 
+sudo  apt-get update
+sudo  apt-get install -y nginx
+# allowing htt
+sudo  ufw 'nginx HTTP' 
+#creating an index.html page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+#perfoming moving permanent redirection (301)
+new_srting="server_name _;\n\trename ^\/redirect_me https:\/\/github.com\/netsoftware permanent;"
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+#creating 404 error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+new_erro="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\
+root \/var\/www\/html;\n\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$new_erro/" /etc/nginx/sites-enabled/default
 #customizing HTTP response header
 sudo sed -i "/server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
-# test error reload  
-sudo nginx -t
-# restarrt after making change
+#test config for error
+sudo  nginx -t
+sudo  service nginx reload
+
