@@ -1,26 +1,42 @@
-#!/usr/bin/env bash
-# configures a new HAproxy as a load balancer
+nstalls HAProxy version 2.4 with the following configurations:
 
-# Install HAproxy on a server
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-2.4
-sudo apt-get update
-sudo apt-get install -y haproxy=2.4.\*
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.4
+apt-get update
+apt-get install -y haproxy=2.4.\*
 
-# Configure haproxy configuration file to distribute requests using a roundrobin algorithm
-echo "ENABLED=1" >> /etc/default/haproxy
-mv /etc/haproxy/haproxy.cfg{,.original}
-echo "
-frontend web_servers
-        bind 0.0.0.0:80
-        default_backend web_servers
+sudo cp /etc/haproxy/haproxy.cfg  /etc/haproxy/haproxy.cfg.bak
+sudo echo "ENABLED=1" >> /etc/default/haproxy
+sudo mv /etc/haproxy/haproxy.cfg{,.original}
+sudo touch /etc/haproxy/haproxy.cfg
 
-backend web_servers
-        mode http
-        balance roundrobin
-        server 229808-web-01 34.224.6.120:80
-        server 229808-web-02 52.201.220.61:80
-" > /etc/haproxy/haproxy.cfg
+printf %s "global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
 
-# Restart HAproxy service
-sudo service haproxy start
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
+
+listen hbnb
+    bind 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    balance roundrobin
+    option httpclose
+    option forwardfor
+    server 229808-web-01 34.224.6.120 check
+    server 229808-web-02 52.201.220.61 check
+" >/etc/haproxy/haproxy.cfg
+
+service haproxy start
