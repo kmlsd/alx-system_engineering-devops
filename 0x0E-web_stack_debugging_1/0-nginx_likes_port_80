@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fix for the second web stack debugging_1 server
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
