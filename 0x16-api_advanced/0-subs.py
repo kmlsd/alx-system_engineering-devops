@@ -13,11 +13,11 @@ def number_of_subscribers(subreddit):
     The number of subscribers for the subreddit, or 0 if the subreddit is invalid.
   """
 
-  url = f"https://www.reddit.com/r/{subreddit}/about.json"
+  url = f"https://www.reddit.com/dev/api/{subreddit}/about.json"
   headers = {'User-Agent': 'Ubuntu 20.04'}
 
   try:
-    response = requests.get(url  , headers=headers)
+    response = requests.get(url  , headers=headers, allow_redirects=False)
     response.raise_for_status()
     data = response.json()
     return data['data']['subscribers']
