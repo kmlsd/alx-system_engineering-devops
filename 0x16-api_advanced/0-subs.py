@@ -3,7 +3,7 @@
 number of subscribers for a given subreddit. """
 
 import requests
-headers = {"User-Agent": "ubuntu:hbtn:v1.0 (by /u/piroli_)"}
+headers = {"User-Agent": "ubuntu:20.04"}
 
 
 def number_of_subscribers(subreddit):
@@ -13,4 +13,5 @@ def number_of_subscribers(subreddit):
     if request.status_code == 200:
         return request.json().get("data").get("subscribers")
 
-   return 0
+    else
+        return 0
