@@ -3,7 +3,7 @@
 containing the titles of all hot articles for a given subreddit. """
 
 import requests
-headers = {"User-Agent": "ubuntu:hbtn:v1.0 (by /u/piroli_)"}
+headers = {"User-Agent": "request"}
 
 
 def recurse(subreddit, hot_list=[], after=None):
