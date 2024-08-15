@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 """
     Uses Reddit API to print the number of subscribers of a subreddit
@@ -20,3 +21,4 @@ def number_of_subscribers(subreddit):
     num_subs = data.get("subscribers")
 
     return num_subs
+
